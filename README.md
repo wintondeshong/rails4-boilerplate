@@ -8,6 +8,8 @@ This is a boilerplate Ruby on Rails application configured with best practices i
 - Environments
     - Production ```config/environments/production.rb```
         - Configure Action Mailer settings (ie. asset_host)
+- RVM
+    - Change project name in ```.rvmrc```
 
 #### Setup
 - ```cp config/database.yml.sample config/database.yml```
