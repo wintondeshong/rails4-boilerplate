@@ -1,0 +1,25 @@
+## MAC OS
+.DS_Store
+
+## EMACS
+*~
+\#*
+.\#*
+
+## VIM
+*.swp
+
+## IDEA / RUBYMINE
+.idea
+
+## PROJECT::SPECIFIC
+/.bundle
+/config/database.yml
+/config/heroku_env.rb
+/db/*.sqlite3
+/.env
+/env
+/log/*
+!/log/.keep
+/spec/fixtures/vcr_cassettes/*
+/tmp
