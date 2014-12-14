@@ -1,9 +1,16 @@
 ## Sitename
 This is a boilerplate Ruby on Rails application configured with best practices in dependencies, performance and various other areas.
 
+### Development
+#### Setup
+- ```cp config/database.yml.sample config/database.yml```
+
 ### Architecture
 #### Client-side Javascript
 - CoffeeScript for JavaScript Abstraction
+
+#### Database
+- MySQL for all environments
 
 #### Views
 - Haml for HTML Abstraction
