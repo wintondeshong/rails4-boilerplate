@@ -2,10 +2,20 @@
 This is a boilerplate Ruby on Rails application configured with best practices in dependencies, performance and various other areas.
 
 ### Development
+#### Project Setup
+- Devise Authentication ```config/devise.rb```
+    - Change ```config.mailer_sender = '<email>'```
+- Environments
+    - Production ```config/environments/production.rb```
+        - Configure Action Mailer settings (ie. asset_host)
+
 #### Setup
 - ```cp config/database.yml.sample config/database.yml```
 
 ### Architecture
+#### Authentication
+- Devise
+
 #### Client-side Javascript
 - CoffeeScript for JavaScript Abstraction
 
@@ -14,6 +24,7 @@ This is a boilerplate Ruby on Rails application configured with best practices i
 
 #### Views
 - Haml for HTML Abstraction
+    - Rake task generate only ERB? Run ```rake haml:replace_erbs``` to convert them.
 - Sass for CSS Abstraction
 
 #### Webserver
@@ -30,3 +41,8 @@ This is a boilerplate Ruby on Rails application configured with best practices i
       Pry.commands.alias_command 'f', 'finish'
     end
     ```
+
+### Troubleshooting
+#### Could not find bcrypt though bundler installed correctly
+- Need to locate spring server ```ps aux | grep spring```
+- Kill the process ```kill 12345```

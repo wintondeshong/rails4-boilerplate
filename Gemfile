@@ -4,6 +4,7 @@ ruby '2.1.5'
 
 group :default do
   gem 'coffee-rails', '~> 4.1.0'        # JavaScript abstraction
+  gem 'devise'                          # Rack based Authentication
   gem 'haml'                            # Html abstraction
   gem 'haml-rails'
   gem 'jbuilder', '~> 2.0'              # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -16,6 +17,10 @@ group :default do
   gem 'uglifier', '>= 1.3.0'
   gem 'unicorn'                         # Default/Preferred Web Server
   gem 'unicorn-rails'                   # Sets Unicorn as default web server with 'rails s'
+end
+
+group :development do
+  gem 'erb2haml'                        # Adds rake commands to bulk convert ERB to HAML
 end
 
 group :development, :test do
