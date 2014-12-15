@@ -44,7 +44,7 @@ describe User do
   # ------------------------------------------------
 
   describe "#email" do
-    describe "given invalid email" do
+    describe "given invalid #email" do
       it "when invalid string validation fails" do
         @user.email = "invalid-email"
         expect(@user.valid?).to be false
@@ -55,7 +55,7 @@ describe User do
       end
     end
 
-    describe "given valid email" do
+    describe "given valid #email" do
       it "returns valid" do
         @user.email = "user@example.com"
         expect(@user.valid?).to be true
@@ -75,11 +75,11 @@ describe User do
     end
 
     describe "given invalid #first_name" do
-      it "returns invalid when empty string" do
+      it "when empty string returns invalid" do
         @user.first_name = ""
         expect(@user.valid?).to be false
       end
-      it "returns invalid when nil" do
+      it "when nil returns invalid" do
         @user.first_name = nil
         expect(@user.valid?).to be false
       end
@@ -95,11 +95,11 @@ describe User do
     end
 
     describe "given invalid #last_name" do
-      it "returns invalid when empty string" do
+      it "when empty string returns invalid" do
         @user.last_name = ""
         expect(@user.valid?).to be false
       end
-      it "returns invalid when nil" do
+      it "when nil returns invalid" do
         @user.last_name = nil
         expect(@user.valid?).to be false
       end

@@ -54,13 +54,13 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  # get "errors/error_404"
-  # get "errors/error_500"
+  get "errors/error_404"
+  get "errors/error_500"
 
   # You can have the root of your site routed with "root"
   root 'home#index'
 
-  # unless Rails.application.config.consider_all_requests_local
-  #   match '*not_found', to: 'errors#error_404'
-  # end
+  unless Rails.env.development?
+    match '*not_found', via: ActionDispatch::Routing::HTTP_METHODS, to: 'errors#error_404'
+  end
 end
