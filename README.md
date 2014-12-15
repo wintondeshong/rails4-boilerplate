@@ -2,6 +2,7 @@
 This is a boilerplate Ruby on Rails application configured with best practices in dependencies, performance and various other areas.
 
 ### Development
+---
 #### Project Setup
 - Devise Authentication ```config/devise.rb```
     - Change ```config.mailer_sender = '<email>'```
@@ -15,6 +16,7 @@ This is a boilerplate Ruby on Rails application configured with best practices i
 - ```cp config/database.yml.sample config/database.yml```
 
 ### Architecture
+---
 #### Authentication
 - Devise
 
@@ -45,6 +47,7 @@ This is a boilerplate Ruby on Rails application configured with best practices i
 - Unicorn for concurrency
 
 ### Debugging
+---
 - For easier debugging commands in pry, simply create ~/.pryrc with the following lines...
 
     ```
@@ -57,6 +60,7 @@ This is a boilerplate Ruby on Rails application configured with best practices i
     ```
 
 ### Troubleshooting
+---
 #### Could not find bcrypt though bundler installed correctly
 - Need to locate spring server ```ps aux | grep spring```
 - Kill the process ```kill 12345```
