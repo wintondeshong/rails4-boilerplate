@@ -3,6 +3,13 @@ This is a boilerplate Ruby on Rails application configured with best practices i
 
 ### Development
 ---
+#### Running and contributing to the project
+- ```bundle install```
+- ```bin/rake db:migrate```
+- ```bin/rake db:test:prepare```
+- ```bin/rails s```
+- ```bin/guard```
+
 #### Project Setup
 - Devise Authentication ```config/devise.rb```
     - Change ```config.mailer_sender = '<email>'```
