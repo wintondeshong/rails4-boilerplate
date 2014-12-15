@@ -69,3 +69,14 @@ This is a boilerplate Ruby on Rails application configured with best practices i
 #### Could not find bcrypt though bundler installed correctly
 - Need to locate spring server ```ps aux | grep spring```
 - Kill the process ```kill 12345```
+
+#### Factory Girl complaining attribute doesn't exist?
+- Problem:
+
+    ```
+    Failure/Error: @user = FactoryGirl.build(:user)
+     NoMethodError:
+       undefined method `first_name=' for #<User:0x007fd22962e8c0>
+    ```
+
+- Solution: ```bin/rake db:test:load```

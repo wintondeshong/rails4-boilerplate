@@ -48,4 +48,7 @@ end
 group :development do
   gem 'annotate'                        # Generates schema information at top of models
   gem 'erb2haml'                        # Adds rake commands to bulk convert ERB to HAML
+  gem 'guard'                           # Watcher
+  gem 'guard-bundler', require: false   # Auto install/update bundle
+  gem 'guard-rspec', require: false     # Auto runs specs
 end
