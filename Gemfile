@@ -1,3 +1,14 @@
+# 1. Specify ruby version
+# 2. Maintain order of groups
+#   - default
+#   - production
+#   - staging
+#   - beta
+#   - assets
+#   - test
+#   - development
+# 3. Alphabetical in each group
+# 4. Sourced git repos up top
 source 'https://rubygems.org'
 
 ruby '2.1.5'
@@ -19,8 +30,10 @@ group :default do
   gem 'unicorn-rails'                   # Sets Unicorn as default web server with 'rails s'
 end
 
-group :development do
-  gem 'erb2haml'                        # Adds rake commands to bulk convert ERB to HAML
+group :test do
+  gem 'capybara'                        # Required by RSpec to run feature tests
+  gem 'rspec'                           # Testing framework
+  gem 'rspec-rails'
 end
 
 group :development, :test do
@@ -29,4 +42,8 @@ group :development, :test do
   gem 'pry-rails'                       # Initializes pry in rails
   gem 'spring'                          # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'web-console', '~> 2.0'           # Access an IRB console on exception pages or by using <%= console %> in views
+end
+
+group :development do
+  gem 'erb2haml'                        # Adds rake commands to bulk convert ERB to HAML
 end
