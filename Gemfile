@@ -37,6 +37,7 @@ group :test do
 end
 
 group :development, :test do
+  gem 'factory_girl_rails'              # Fixture replacement
   gem 'pry'                             # Debugger
   gem 'pry-byebug'                      # Pry navigation commands
   gem 'pry-rails'                       # Initializes pry in rails

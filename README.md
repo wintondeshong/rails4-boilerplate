@@ -24,6 +24,18 @@ This is a boilerplate Ruby on Rails application configured with best practices i
 #### Database
 - MySQL for all environments
 
+#### Testing
+- Tests are written with RSpec in spec/ folder
+    - ```bin/rspec```
+- Factories via Factory Girl in spec/factories
+- Types
+    - Controllers
+    - Features (via Capybara)
+    - Helpers
+    - Models
+    - Routes
+    - Views
+
 #### Views
 - Haml for HTML Abstraction
     - Rake task generate only ERB? Run ```rake haml:replace_erbs``` to convert them.
