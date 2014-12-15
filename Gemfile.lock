@@ -36,6 +36,9 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    annotate (2.6.5)
+      activerecord (>= 2.3.0)
+      rake (>= 0.8.7)
     arel (6.0.0)
     bcrypt (3.1.9)
     binding_of_caller (0.7.2)
@@ -239,6 +242,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
   capybara
   coffee-rails (~> 4.1.0)
   devise

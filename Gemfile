@@ -46,5 +46,6 @@ group :development, :test do
 end
 
 group :development do
+  gem 'annotate'                        # Generates schema information at top of models
   gem 'erb2haml'                        # Adds rake commands to bulk convert ERB to HAML
 end

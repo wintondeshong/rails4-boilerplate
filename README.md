@@ -12,7 +12,7 @@ This is a boilerplate Ruby on Rails application configured with best practices i
 - RVM
     - Change project name in ```.rvmrc```
 
-#### Setup
+#### System Setup
 - ```cp config/database.yml.sample config/database.yml```
 
 ### Architecture
@@ -25,6 +25,11 @@ This is a boilerplate Ruby on Rails application configured with best practices i
 
 #### Database
 - MySQL for all environments
+
+#### Models
+- Annotate: With the deprecation of attr_accessible, there is not a clear picture of attributes on your models.
+  Calling ```annotate``` will put schema information on top of your model files. Annotate will automatically be
+  executed when you run ```rake db:migrate```.
 
 #### Testing
 - Tests are written with RSpec in spec/ folder
