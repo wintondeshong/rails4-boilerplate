@@ -47,9 +47,13 @@ group :development, :test do
 end
 
 group :development do
-  gem 'annotate'                        # Generates schema information at top of models
-  gem 'erb2haml'                        # Adds rake commands to bulk convert ERB to HAML
-  gem 'guard'                           # Watcher
-  gem 'guard-bundler', require: false   # Auto install/update bundle
-  gem 'guard-rspec', require: false     # Auto runs specs
+  gem 'spork', :github => 'sporkrb/spork'             # Without using master spork does not work with Rails 4 @see https://github.com/sporkrb/spork/issues/223
+  gem 'spork-rails', :github => 'sporkrb/spork-rails' # Without using master spork does not work with Rails 4 @see https://github.com/sporkrb/spork/issues/223
+
+  gem 'annotate'                                      # Generates schema information at top of models
+  gem 'erb2haml'                                      # Adds rake commands to bulk convert ERB to HAML
+  gem 'guard'                                         # Watcher
+  gem 'guard-bundler', require: false                 # Auto install/update bundle
+  gem 'guard-rspec', require: false                   # Auto runs specs
+  gem 'guard-spork'                                   # Drb server for rspec to run Rails in background
 end

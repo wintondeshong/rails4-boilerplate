@@ -40,7 +40,8 @@ This is a boilerplate Ruby on Rails application configured with best practices i
 
 #### Testing
 - Tests are written with RSpec in spec/ folder
-    - ```bin/rspec```
+    - Manual: ```bin/rspec```
+    - Automatic with Spork (recommended): ```bin/guard```
 - Factories via Factory Girl in spec/factories
 - Types
     - Controllers
