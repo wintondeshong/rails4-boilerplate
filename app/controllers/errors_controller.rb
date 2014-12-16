@@ -7,4 +7,8 @@ class ErrorsController < ApplicationController
   def error_500
   end
 
+  def error_500_fake
+    raise "faked 500 error"
+  end
+
 end

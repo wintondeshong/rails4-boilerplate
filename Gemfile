@@ -32,6 +32,7 @@ end
 
 group :test do
   gem 'capybara'                        # Required by RSpec to run feature tests
+  gem 'launchy'
   gem 'rspec'                           # Testing framework
   gem 'rspec-rails'
 end
