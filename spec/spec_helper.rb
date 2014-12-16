@@ -1,5 +1,8 @@
 require 'factory_girl'
 
+# Load matchers and other custom rspec files
+Dir[File.dirname(__FILE__) + "/support/**/*.rb"].each {|f| require f}
+
 RSpec.configure do |config|
 
   config.include FactoryGirl::Syntax::Methods
