@@ -1,4 +1,4 @@
-require "rails_helper"
+require "spec_helper"
 
 feature "Error Handling" do
   scenario "User visits non-existent destination and receives 404" do
@@ -7,7 +7,7 @@ feature "Error Handling" do
   end
 
   scenario "User visits destination that raises exception and receives 500" do
-    visit "/errors/error_500_fake"
+    visit errors_error_500_fake_path
     expect(page).to contain_comment "error_500 - do not remove"
   end
 end

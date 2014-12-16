@@ -50,6 +50,8 @@ This is a boilerplate Ruby on Rails application configured with best practices i
     - Models
     - Routes
     - Views
+- Environment Variables
+    - ```ENV["SKIP_REDIRECT_500_ERROR"]``` - Skips 500 redirection and only logs the exception
 
 #### Views
 - Haml for HTML Abstraction

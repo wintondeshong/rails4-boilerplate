@@ -39,4 +39,14 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Action Mailer Configuration
+  config.action_mailer.raise_delivery_errors = false # Don't care if the mailer can't send.
+  config.action_mailer.asset_host = "http://localhost:3000"
+  config.action_mailer.default :content_type => "text/html"
+  config.action_mailer.default_url_options = {
+    :host => "localhost",
+    :port => "3000",
+    :only_path => false
+  }
 end
