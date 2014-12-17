@@ -1,4 +1,4 @@
-require 'rspec/expectations'
+require "rspec/expectations"
 
 # Tests if the page body contains a specific html comment <!-- #{expected} -->
 RSpec::Matchers.define :contain_comment do |expected|

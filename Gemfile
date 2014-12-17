@@ -41,15 +41,16 @@ group :test do
   gem 'phantomjs', :require => 'phantomjs/poltergeist'
   gem 'poltergeist'
   gem 'rspec'                                          # Testing framework
-  gem 'rspec-rails'
   gem 'selenium-webdriver'
 end
 
 group :development, :test do
+  gem 'dotenv'                                         # Used to supplement secrets.yml for pre-rails loaded environment variables
   gem 'factory_girl_rails'                             # Fixture replacement
   gem 'pry'                                            # Debugger
   gem 'pry-byebug'                                     # Pry navigation commands
   gem 'pry-rails'                                      # Initializes pry in rails
+  gem 'rspec-rails'
   gem 'spring'                                         # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'web-console', '~> 2.0'                          # Access an IRB console on exception pages or by using <%= console %> in views
 end
@@ -59,6 +60,7 @@ group :development do
   gem 'erb2haml'                                       # Adds rake commands to bulk convert ERB to HAML
   gem 'guard'                                          # Watcher
   gem 'guard-bundler', require: false                  # Auto install/update bundle
+  gem 'guard-rake'                                     # Auto run rake tasks
   gem 'guard-rspec', require: false                    # Auto runs specs
   gem 'guard-spork'                                    # Drb server for rspec to run Rails in background
 end

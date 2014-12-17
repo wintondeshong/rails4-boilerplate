@@ -1,5 +1,5 @@
-require 'rubygems'
-require 'spork'
+require "rubygems"
+require "spork"
 #uncomment the following line to use spork with the debugger
 #require 'spork/ext/ruby-debug'
 
@@ -12,17 +12,15 @@ Spork.prefork do
 
   ENV["RAILS_ENV"] ||= 'test'
   require File.expand_path("../../config/environment", __FILE__)
-  require 'email_spec'
-  require 'factory_girl'
-  require 'rspec/rails'
+  require "email_spec"
+  require "factory_girl"
+  require "rspec/rails"
 
   # Requires supporting ruby files with custom matchers and macros, etc,
-  # in spec/support/ and its subdirectories.
+  # in spec/support/ and its subdirectories. (ie. DatabaseCleaner, FactoryGirl, etc...)
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
   RSpec.configure do |config|
-    config.include FactoryGirl::Syntax::Methods
-
     # rspec-expectations config goes here. You can use an alternate
     # assertion/expectation library such as wrong or the stdlib/minitest
     # assertions if you prefer.
@@ -53,30 +51,6 @@ Spork.prefork do
     # config.profile_examples = 1000 # Use in CI
     config.order = :random
     Kernel.srand config.seed
-
-
-    # Database Cleaner
-    # ----------------
-
-    config.before(:suite) do
-      DatabaseCleaner.clean_with :truncation
-    end
-
-    config.before(:each) do
-      DatabaseCleaner.strategy = :transaction
-    end
-
-    config.before(:each, js: true) do
-      DatabaseCleaner.strategy = :truncation
-    end
-
-    config.before(:each) do
-      DatabaseCleaner.start
-    end
-
-    config.after(:each) do
-      DatabaseCleaner.clean
-    end
 
   end
 end

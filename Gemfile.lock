@@ -94,6 +94,7 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    dotenv (1.0.2)
     email_spec (1.6.0)
       launchy (~> 2.1)
       mail (~> 2.2)
@@ -121,6 +122,9 @@ GEM
       guard (~> 2.2)
       guard-compat (~> 1.1)
     guard-compat (1.1.0)
+    guard-rake (1.0.0)
+      guard
+      rake
     guard-rspec (4.5.0)
       guard (~> 2.1)
       guard-compat (~> 1.1)
@@ -322,11 +326,13 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   database_cleaner
   devise
+  dotenv
   email_spec
   erb2haml
   factory_girl_rails
   guard
   guard-bundler
+  guard-rake
   guard-rspec
   guard-spork
   haml

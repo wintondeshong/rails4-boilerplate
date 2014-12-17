@@ -21,6 +21,7 @@ This is a boilerplate Ruby on Rails application configured with best practices i
 
 #### System Setup
 - ```cp config/database.yml.sample config/database.yml```
+- ```cp .env.sample .env```
 
 ### Architecture
 ---
@@ -40,8 +41,13 @@ This is a boilerplate Ruby on Rails application configured with best practices i
 
 #### Testing
 - Tests are written with RSpec in spec/ folder
-    - Manual: ```bin/rspec```
+    - Manual:
+        - Full suite: ```bin/rake spec```
+        - Development-only Tests: ```bin/rake spec:development```
+            - Excludes 'Features', 'Requests' and 'Integration'
     - Automatic with Spork (recommended): ```bin/guard```
+        - Full suite: Set 'EXCLUDE_INTEGRATION_TESTS' in .env to 'false'
+        - Development-only Tests: Set 'EXCLUDE_INTEGRATION_TESTS' in .env to true'
 - Factories via Factory Girl in spec/factories
 - Types
     - Controllers
@@ -50,8 +56,8 @@ This is a boilerplate Ruby on Rails application configured with best practices i
     - Models
     - Routes
     - Views
-- Environment Variables
-    - ```ENV["SKIP_REDIRECT_500_ERROR"]``` - Skips 500 redirection and only logs the exception
+- Logs
+    - Run ```tail -f log/test.log``` for more details
 
 #### Views
 - Haml for HTML Abstraction

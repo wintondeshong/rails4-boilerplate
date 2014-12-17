@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   unless Rails.env.development?
     rescue_from Exception, with: lambda { |exception|
       log_exception exception
-      redirect_to errors_error_500_path if ENV["SKIP_REDIRECT_500_ERROR"] != "true"
+      redirect_to errors_error_500_path
     }
   end
 

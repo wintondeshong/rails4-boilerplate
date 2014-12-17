@@ -2,7 +2,7 @@ require "capybara/rails"
 require "capybara/rspec"
 require "capybara/poltergeist"
 
-puts "[Load spec/support/capybara.rb]"
+puts "[Load spec/support/capybara]"
 
 # Setup capybara webkit as the driver for javascript-enabled tests.
 # Capybara.javascript_driver = :webkit

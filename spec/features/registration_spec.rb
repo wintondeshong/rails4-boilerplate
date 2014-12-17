@@ -4,14 +4,6 @@ require "spec_helper"
 
 feature "Registration" do
 
-  before(:all) do
-    ENV["SKIP_REDIRECT_500_ERROR"] = "true"
-  end
-
-  after(:all) do
-    ENV["SKIP_REDIRECT_500_ERROR"] = "false"
-  end
-
   scenario "Unauthenticated user can sign up for a new account" do
     user = FactoryGirl.build(:user)
 

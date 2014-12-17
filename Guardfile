@@ -1,5 +1,22 @@
-# A sample Guardfile
-# More info at https://github.com/guard/guard#readme
+# Environment Handling
+# --------------------
+
+require "dotenv"
+
+Dotenv.load
+
+spec_paths = %w{spec/controllers spec/helpers spec/models spec/routing spec/views}
+
+if ENV['EXCLUDE_INTEGRATION_TESTS'] == 'true'
+  puts "[Guardfile] Integration Tests: Excluded"
+else
+  puts "[Guardfile] Integration Tests: Included"
+  spec_paths << "spec/features"
+end
+
+
+# Standard Guardfile
+# ------------------
 
 ## Uncomment and set this to only include directories you want to watch
 directories %w(app lib config spec)
@@ -11,7 +28,7 @@ guard :bundler do
   watch "Gemfile"
 end
 
-guard :rspec, cmd: 'bin/rspec' do
+guard :rspec, cmd: 'bin/rspec', spec_paths: spec_paths do
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^spec/support_helpers/.+_helper\.rb$}) { "spec" }
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }

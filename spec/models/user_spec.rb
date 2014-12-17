@@ -33,7 +33,7 @@
 #  index_users_on_unlock_token          (unlock_token) UNIQUE
 #
 
-require 'rails_helper'
+require "spec_helper"
 
 describe User do
 
