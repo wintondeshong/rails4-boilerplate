@@ -46,6 +46,7 @@ FactoryGirl.define do
     last_name "User"
     password "password"
     password_confirmation "password"
+    confirmed_at Time.zone.now
   end
 
 end

@@ -13,4 +13,13 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
+
+    %ul
+      %li= link_to "Home", root_path
+      - if user_signed_in?
+        %li= link_to "Log out", destroy_user_session_path
+      - unless user_signed_in?
+        %li= link_to "Create Account", new_user_registration_path
+        %li= link_to "Sign in", new_user_session_path
+
     = yield
