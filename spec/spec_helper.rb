@@ -61,4 +61,7 @@ end
 Spork.each_run do
   # This code will be run each time you run your specs.
   puts "[Spork.each_run]"
+
+  ActiveSupport::Dependencies.clear
+  FactoryGirl.reload
 end
