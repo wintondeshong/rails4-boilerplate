@@ -21,7 +21,7 @@ group :default do
   gem 'jbuilder', '~> 2.0'                             # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
   gem 'jquery-rails'
   gem 'mysql2'
-  gem 'rails', '4.2.0.rc3'
+  gem 'rails', '4.2.0'
   gem 'sass-rails', '~> 5.0'                           # CSS abstraction
   gem 'sdoc', '~> 0.4.0', group: :doc                  # bundle exec rake doc:rails generates the API under doc/api.
   gem 'therubyracer', platforms: :ruby
