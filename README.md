@@ -7,7 +7,7 @@ This is a boilerplate Ruby on Rails application configured with best practices i
 - ```bin/bundle install```
 - ```bin/rake db:migrate```
 - ```bin/rake db:test:prepare```
-- ```bin/rails s```
+- ```bin/foreman start```
 - ```bin/guard```
 
 #### Project Setup

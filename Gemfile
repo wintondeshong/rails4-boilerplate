@@ -30,6 +30,10 @@ group :default do
   gem 'unicorn-rails'                                  # Sets Unicorn as default web server with 'rails s'
 end
 
+group :production do
+  gem 'rails_12factor'                                 # Recommended for Heroku hosted applications
+end
+
 group :test do
   gem 'spork', :github => 'sporkrb/spork'              # Without using master spork does not work with Rails 4 @see https://github.com/sporkrb/spork/issues/223
   gem 'spork-rails', :github => 'sporkrb/spork-rails'  # Without using master spork does not work with Rails 4 @see https://github.com/sporkrb/spork/issues/223
@@ -37,20 +41,21 @@ group :test do
   gem 'capybara'                                       # Required by RSpec to run feature tests
   gem 'database_cleaner'
   gem 'email_spec'
+  gem 'factory_girl_rails'                             # Fixture replacement
   gem 'launchy'
   gem 'phantomjs', :require => 'phantomjs/poltergeist'
   gem 'poltergeist'
   gem 'rspec'                                          # Testing framework
+  gem 'rspec-rails'
   gem 'selenium-webdriver'
 end
 
 group :development, :test do
   gem 'dotenv'                                         # Used to supplement secrets.yml for pre-rails loaded environment variables
-  gem 'factory_girl_rails'                             # Fixture replacement
+  gem 'foreman'
   gem 'pry'                                            # Debugger
   gem 'pry-byebug'                                     # Pry navigation commands
   gem 'pry-rails'                                      # Initializes pry in rails
-  gem 'rspec-rails'
   gem 'spring'                                         # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'web-console', '~> 2.0'                          # Access an IRB console on exception pages or by using <%= console %> in views
 end
