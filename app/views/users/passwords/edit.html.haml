@@ -1,15 +1,22 @@
 - title "Change your password"
-= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
-  = devise_error_messages!
-  = f.hidden_field :reset_password_token
-  .field
-    = f.label :password, "New password"
-    %br/
-    = f.password_field :password, autofocus: true, autocomplete: "off"
-  .field
-    = f.label :password_confirmation, "Confirm new password"
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "off"
-  .actions
-    = f.submit "Change my password"
-= render "users/shared/links"
+
+.col-md-6.col-sm-6.col-xs-12
+  = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: "form" }) do |f|
+    = devise_error_messages!
+      = f.hidden_field :reset_password_token
+      .form-group
+        .row
+          = f.label :password, "New password", class: "col-md-2 col-sm-12 col-xs-12 control-label"
+          .col-md-10.col-sm-12.col-xs-12
+            = f.password_field :password, autofocus: true, autocomplete: "off"
+      .form-group
+        .row
+          = f.label :password_confirmation, "Confirm new password", class: "col-md-2 col-sm-12 col-xs-12 control-label"
+          .col-md-10.col-sm-12.col-xs-12
+            = f.password_field :password_confirmation, autocomplete: "off", class: "form-control"
+      .form-group
+        .row
+          .actions.col-md-12
+            = f.submit "Change my password", {class: "btn btn-primary btn-block"}
+.col-md-6.col-sm-6.col-xs-12
+  = render "users/shared/links"

@@ -8,4 +8,14 @@ Rails.application.config.assets.version = '1.0'
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-# Rails.application.config.assets.precompile += %w( search.js )
+Rails.application.config.assets.precompile += [
+                                               "vendor/backbone-1.1.2.js",
+                                               "vendor/backbone-relational-0.9.0.js",
+                                               "vendor/jquery-1.11.2.js",
+                                               "vendor/lodash-3.2.0.js",
+                                               "vendor/bootstrap-3.3.2.js",
+                                               "vendor/bootstrap-3.3.2.css",
+                                               "vendor/bootstrap-theme-3.3.2.css",
+                                               "vendor/bootstrap-datepicker.js",
+                                               "vendor/bootstrap-datepicker.css"
+                                              ]

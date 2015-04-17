@@ -1,0 +1,23 @@
+%nav.navbar.navbar-inverse
+  .container
+    .row
+      .navbar-header.col-md-4.col-sm-12.col-xs-12
+        %a.navbar-brand{ href: root_path, title: "SiteName" } SiteName
+
+        %button.navbar-toggle.collapsed{ data: { toggle: "collapse", target: "#navbar-collapse" }}
+          %span.sr-only
+            Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+
+      #navbar-collapse.collapse.navbar-collapse
+        #navbar.col-md-8.col-sm-12.col-xs-12
+          .row
+            .col-md-8.col-sm-6.col-xs-6
+              %ul.nav.navbar-nav.nav-pages.navbar-right
+                - if user_signed_in?
+                  %li= link_to "Log out", destroy_user_session_path
+                - unless user_signed_in?
+                  %li= link_to "Create Account", new_user_registration_path
+                  %li= link_to "Sign in", new_user_session_path
