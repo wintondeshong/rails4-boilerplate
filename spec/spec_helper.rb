@@ -10,7 +10,7 @@ Spork.prefork do
 
   puts "[Spork.prefork]"
 
-  ENV["RAILS_ENV"] ||= 'test'
+  ENV["RAILS_ENV"] ||= "test"
   require File.expand_path("../../config/environment", __FILE__)
   require "email_spec"
   require "factory_girl"

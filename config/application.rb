@@ -8,6 +8,14 @@ Bundler.require(*Rails.groups)
 
 module Sandbox
   class Application < Rails::Application
+    require "#{Rails.root}/lib/enumerable"
+    require "#{Rails.root}/lib/string"
+
+    # Custom directories with classes and modules you want to be autoloadable.
+    config.autoload_paths += %W{#{config.root}/app}
+    config.autoload_paths += %W{#{config.root}/app/models/validators}
+    config.autoload_paths += %W{#{config.root}/lib}
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

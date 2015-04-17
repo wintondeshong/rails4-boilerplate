@@ -1,19 +1,29 @@
 !!!
-%html{:lang => "en"}
+%html{ lang: "en" }
   %head
-    %meta{:charset => "utf-8"}
-    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+    %meta{ charset: "utf-8" }
+    %meta{ content: "IE=edge,chrome=1", "http-equiv": "X-UA-Compatible" }
     %title
       = content_for(:title)
       | SiteName
-    %meta{:content => "Copyright (c) #{Time.new.year} SiteName. All Rights Reserved.", :name => "copyright"}
-    %meta{:content => "", :name => "description"}
-    %meta{:content => "SiteName", :name => "author"}
-    = stylesheet_link_tag    'application', media: 'all'
-    = javascript_include_tag 'application'
+    %meta{ content: "Copyright (c) #{Time.new.year} SiteName. All Rights Reserved.", name: "copyright" }
+    %meta{ content: "", name: "description" }
+    %meta{ content: "SiteName", name: "author" }
+    = stylesheet_link_tag    "application", media: "all"
+    = javascript_include_tag "application"
     = csrf_meta_tags
   %body
 
+    -# Flash Messages
+    -# ------------------------------------------------
+    - flash.each do |name, message|
+      - if name != "timedout" # skip timed out flash type
+        .alert{ class: "alert-#{bootstrap_alert_name(name)}", role: "alert" }
+          = message
+
+
+    -# Navigation
+    -# ------------------------------------------------
     %ul
       %li= link_to "Home", root_path
       - if user_signed_in?
@@ -22,4 +32,7 @@
         %li= link_to "Create Account", new_user_registration_path
         %li= link_to "Sign in", new_user_session_path
 
+
+    -# Child layout content
+    -# ------------------------------------------------
     = yield

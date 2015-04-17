@@ -1,5 +1,5 @@
-# RSpec is only loaded in development and test environments
-if Rails.env.development? or Rails.env.test?
+# RSpec is only loaded in test environments
+if Rails.env.test?
 
   namespace :spec do
     desc 'Run all specs in spec directory (exluding request/integration specs)'

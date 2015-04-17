@@ -35,76 +35,88 @@
 
 require "spec_helper"
 
+
+
 describe User do
 
-  before(:each) do
-    @user = FactoryGirl.build(:user)
-  end
+  # ------------------------------------------------------------------------------
+  #
+  # Unit Tests
+  #
+  # ------------------------------------------------------------------------------
 
-  # Email
-  # ------------------------------------------------
+  describe "unit tests", :unit do
 
-  describe "#email" do
-    describe "given invalid #email" do
-      it "when invalid string validation fails" do
-        @user.email = "invalid-email"
-        expect(@user.valid?).to be false
+    before(:each) do
+      @user = build(:user)
+    end
+
+    # Email
+    # ------------------------------------------------
+
+    describe "#email" do
+      describe "given invalid #email" do
+        it "when invalid string validation fails" do
+          @user.email = "invalid-email"
+          expect(@user.valid?).to be false
+        end
+        it "when nil validation fails" do
+          @user.email = nil
+          expect(@user.valid?).to be false
+        end
       end
-      it "when nil validation fails" do
-        @user.email = nil
-        expect(@user.valid?).to be false
+
+      describe "given valid #email" do
+        it "returns valid" do
+          @user.email = "user@example.com"
+          expect(@user.valid?).to be true
+        end
       end
     end
 
-    describe "given valid #email" do
-      it "returns valid" do
-        @user.email = "user@example.com"
-        expect(@user.valid?).to be true
-      end
-    end
-  end
+    # First & Last Name
+    # ------------------------------------------------
 
-  # First & Last Name
-  # ------------------------------------------------
-
-  describe "#first_name" do
-    describe "given valid #first_name" do
-      it "when valid string validation passes" do
-        @user.first_name = "firstname"
-        expect(@user.valid?).to be(true), "expected first_name valid, but instead failed #{@user.errors.inspect}"
+    describe "#first_name" do
+      describe "given valid #first_name" do
+        it "when valid string validation passes" do
+          @user.first_name = "firstname"
+          expect(@user.valid?).to be(true), "expected first_name valid, but instead failed #{@user.errors.inspect}"
+        end
       end
-    end
 
-    describe "given invalid #first_name" do
-      it "when empty string returns invalid" do
-        @user.first_name = ""
-        expect(@user.valid?).to be false
-      end
-      it "when nil returns invalid" do
-        @user.first_name = nil
-        expect(@user.valid?).to be false
-      end
-    end
-  end
-
-  describe "#last_name" do
-    describe "given valid #last_name" do
-      it "when valid string validation passes" do
-        @user.last_name = "lastname"
-        expect(@user.valid?).to be(true), "expected last_name valid, but instead failed #{@user.errors.inspect}"
+      describe "given invalid #first_name" do
+        it "when empty string returns invalid" do
+          @user.first_name = ""
+          expect(@user.valid?).to be false
+        end
+        it "when nil returns invalid" do
+          @user.first_name = nil
+          expect(@user.valid?).to be false
+        end
       end
     end
 
-    describe "given invalid #last_name" do
-      it "when empty string returns invalid" do
-        @user.last_name = ""
-        expect(@user.valid?).to be false
+    describe "#last_name" do
+      describe "given valid #last_name" do
+        it "when valid string validation passes" do
+          @user.last_name = "lastname"
+          expect(@user.valid?).to be(true), "expected last_name valid, but instead failed #{@user.errors.inspect}"
+        end
       end
-      it "when nil returns invalid" do
-        @user.last_name = nil
-        expect(@user.valid?).to be false
+
+      describe "given invalid #last_name" do
+        it "when empty string returns invalid" do
+          @user.last_name = ""
+          expect(@user.valid?).to be false
+        end
+        it "when nil returns invalid" do
+          @user.last_name = nil
+          expect(@user.valid?).to be false
+        end
       end
     end
+
   end
 
 end
