@@ -24,3 +24,4 @@
 /spec/fixtures/vcr_cassettes/*
 /tmp
 .env
+public/assets/

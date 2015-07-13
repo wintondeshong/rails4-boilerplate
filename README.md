@@ -46,8 +46,8 @@ This is a boilerplate Ruby on Rails application configured with best practices i
         - Development-only Tests: ```bin/rake spec:development```
             - Excludes 'Features', 'Requests' and 'Integration'
     - Automatic with Spork (recommended): ```bin/guard```
-        - Full suite: Set ```EXCLUDE_INTEGRATION_TESTS``` in .env to ```false```
-        - Development-only Tests: Set ```EXCLUDE_INTEGRATION_TESTS``` in .env to ```true```
+        - Full suite: Set ```EXCLUDE_FUNCTIONAL_TESTS``` in .env to ```false```
+        - Development-only Tests: Set ```EXCLUDE_FUNCTIONAL_TESTS``` in .env to ```true```
 - Factories via Factory Girl in spec/factories
 - Types
     - Controllers

@@ -23,7 +23,7 @@ group :default do
   gem "jquery-rails"
   gem "mysql2"
   gem "oj"                                             # JSON Parser
-  gem "rails", "4.2.1"
+  gem "rails", "4.2.3"
   gem "sass-rails", "~> 5.0"                           # CSS abstraction
   gem "sdoc", "~> 0.4.0", group: :doc                  # bundle exec rake doc:rails generates the API under doc/api.
   gem "therubyracer", platforms: :ruby

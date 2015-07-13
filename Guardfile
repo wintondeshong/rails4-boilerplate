@@ -7,10 +7,10 @@ Dotenv.load
 
 spec_paths = %w{spec/controllers spec/helpers spec/models spec/routing spec/views}
 
-if ENV['EXCLUDE_INTEGRATION_TESTS'] == 'true'
-  puts "[Guardfile] Integration Tests: Excluded"
+if ENV['EXCLUDE_FUNCTIONAL_TESTS'] == 'true'
+  puts "[Guardfile] Functional Tests: Excluded"
 else
-  puts "[Guardfile] Integration Tests: Included"
+  puts "[Guardfile] Functional Tests: Included"
   spec_paths << "spec/features"
 end
 
