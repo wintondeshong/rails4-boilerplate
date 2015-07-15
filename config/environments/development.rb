@@ -45,4 +45,9 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Ensure Unicorn logs as expected in development
+  config.logger       = Logger.new(STDOUT)
+  config.logger.level = Logger.const_get(ENV["LOG_LEVEL"] ? ENV["LOG_LEVEL"].upcase : "DEBUG")
+  config.log_level    = (ENV["LOG_LEVEL"] ? ENV["LOG_LEVEL"].downcase : "debug").to_sym
 end
