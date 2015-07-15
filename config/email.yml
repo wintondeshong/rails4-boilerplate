@@ -1,0 +1,24 @@
+development:
+  :address: <%= ENV["EMAIL_ADDRESS"] %>
+  :port: <%= ENV["EMAIL_PORT"] %>
+  :domain: <%= ENV["EMAIL_DOMAIN"] %>
+  :authentication: plain
+  :user_name: <%= ENV["EMAIL_USER"] %>
+  :password: <%= ENV["EMAIL_PASSWORD"] %>
+  :enable_starttls_auto: true
+staging:
+  :address: <%= ENV["EMAIL_ADDRESS"] %>
+  :port: <%= ENV["EMAIL_PORT"] %>
+  :domain: <%= ENV["EMAIL_DOMAIN"] %>
+  :authentication: plain
+  :user_name: <%= ENV["EMAIL_USER"] %>
+  :password: <%= ENV["EMAIL_PASSWORD"] %>
+  :enable_starttls_auto: true
+production:
+  :address: <%= ENV["EMAIL_ADDRESS"] %>
+  :port: <%= ENV["EMAIL_PORT"] %>
+  :domain: <%= ENV["EMAIL_DOMAIN"] %>
+  :authentication: plain
+  :user_name: <%= ENV["EMAIL_USER"] %>
+  :password: <%= ENV["EMAIL_PASSWORD"] %>
+  :enable_starttls_auto: true
