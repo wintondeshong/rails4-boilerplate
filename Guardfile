@@ -5,7 +5,7 @@ require "dotenv"
 
 Dotenv.load
 
-spec_paths = %w{spec/controllers spec/helpers spec/models spec/routing spec/views}
+spec_paths = %w{spec/controllers spec/helpers spec/models spec/routing spec/views spec/use_cases}
 
 if ENV['EXCLUDE_FUNCTIONAL_TESTS'] == 'true'
   puts "[Guardfile] Functional Tests: Excluded"
@@ -38,6 +38,7 @@ guard :rspec, cmd: 'bin/rspec', spec_paths: spec_paths do
   watch(%r{^app/(.+)\.rb$})                           { |m| "spec/#{m[1]}_spec.rb" }
   watch(%r{^app/(.*)(\.erb|\.haml)$})                 { |m| "spec/#{m[1]}#{m[2]}_spec.rb" }
   watch(%r{^app/controllers/(.+)_(controller)\.rb$})  { |m| ["spec/routing/#{m[1]}_routing_spec.rb", "spec/#{m[2]}s/#{m[1]}_#{m[2]}_spec.rb", "spec/acceptance/#{m[1]}_spec.rb"] }
+  watch(%r{^app/use_cases/(.+)\.rb$})                 { |m| "spec/use_cases/#{m[1]}_spec.rb" }
   watch(%r{^app/admin/(.+)\.rb$})                     { |m| "spec/controllers/admin/#{m[1]}_controller_spec.rb" }
   watch(%r{^spec/support/(.+)\.rb$})                  { "spec" }
   watch(%r{^extras/(.+)\.rb$})                        { "spec" }
